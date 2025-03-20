@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input-history</title>
+    <link rel="stylesheet" href="input-history.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="item-wrap">
+        <div class="items">
+          <div class="item-left">
+            <h2>입력</h2>
+            <input
+              id="input_content"
+              type="text"
+              placeholder="내용을 입력하세요"
+              v-model="contents"
+              @keyup.enter="add_content"
+            />
+            다음 줄 : shift + enter <br />입력 완료 : enter
+          </div>
+          <div class="item-right">
+            <h2>history</h2>
+            <div
+              v-for="(output,index) in outputs"
+              :key="index"
+              class="item-output"
+            >
+              {{output+"\n"}}
+              <button class="delete_button" @click="deleteItem(index)">
+                삭제
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      const vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { outputs: [], contents: '' }; //contents는 입력된 값
+        },
+        methods: {
+          add_content(e) {
+            if (e.keyCode == 13) {
+              this.contents = e.target.value; //엔터 누르면 입력된 값 contents에 저장
+              this.outputs.push(this.contents);
+              this.contents = '';
+            }
+          },
+          deleteItem(index) {
+            this.outputs.splice(index, 1);
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
