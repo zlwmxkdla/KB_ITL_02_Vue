@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>1부터 100까지만 입력가능합니다.</p>
+      점수 : <input type="text" v-model.number="score" :class="info" />
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      const vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            score: 50,
+          };
+        },
+        computer: {
+          info() {
+            return { warning: this.score < 1 || this.score > 100 };
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
