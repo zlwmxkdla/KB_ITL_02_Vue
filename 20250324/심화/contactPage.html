@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact page</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="card card-body bg-light">
+        <div class="title">우리반 Contact ♥️</div>
+      </div>
+
+      <div class="card card-default card-borderless">
+        <div class="card-body">
+            <div class="input-group">
+                이름 <input type="text">
+          </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      const vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {};
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
