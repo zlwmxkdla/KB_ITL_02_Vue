@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import InputTodo from './components/InputTodo.vue';
+import InputTodo from './components/InputTodo.vue'; //지역 컴포넌트 등록
 import TodoList from './components/TodoList.vue';
 import TodoCount from './components/TodoCount.vue';
 export default {
-  components: { InputTodo, TodoList, TodoCount },
+  components: { InputTodo, TodoList, TodoCount }, 
 
   data() {
     return {

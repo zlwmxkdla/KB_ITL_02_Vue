@@ -5,6 +5,7 @@
 </template>
 <script>
 import { computed } from 'vue';
+import SongList from './components/SongList.vue';
 export default {
   name: 'App',
   data() {

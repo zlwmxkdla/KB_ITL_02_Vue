@@ -6,7 +6,7 @@
       :checked="checked"
       @change="$emit('check-changed', { id, checked: $event.target.checked })"
     />
-    <slot>Item</slot>
+    <slot>Item</slot> 
   </div>
 </template>
 <script>
