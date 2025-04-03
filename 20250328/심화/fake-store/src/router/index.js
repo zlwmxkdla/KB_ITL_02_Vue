@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '@/pages/HomePage.vue';
-import ElectronicsPage from '@/pages/ElectronicsPage.vue';
-import JeweleryPage from '@/pages/JeweleryPage.vue';
-import MensClothingPage from '@/pages/MensClothingPage.vue';
-import WomensClothingPage from '@/pages/WomensClothingPage.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '@/pages/HomePage.vue'
+import ElectronicsPage from '@/pages/ElectronicsPage.vue'
+import JeweleryPage from '@/pages/JeweleryPage.vue'
+import MensClothingPage from '@/pages/MensClothingPage.vue'
+import WomensClothingPage from '@/pages/WomensClothingPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +34,6 @@ const router = createRouter({
       component: WomensClothingPage,
     },
   ],
-});
+})
 
-export default router;
+export default router
