@@ -1,9 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '@/pages/HomePage.vue'
-import ElectronicsPage from '@/pages/ElectronicsPage.vue'
-import JeweleryPage from '@/pages/JeweleryPage.vue'
-import MensClothingPage from '@/pages/MensClothingPage.vue'
-import WomensClothingPage from '@/pages/WomensClothingPage.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from '../pages/HomePage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,24 +12,25 @@ const router = createRouter({
     {
       path: '/electronics',
       name: 'electronics',
-      component: ElectronicsPage,
+      // lazy loading
+      component: () => import('../pages/ElectronicsPage.vue'),
     },
     {
       path: '/jewelery',
       name: 'jewelery',
-      component: JeweleryPage,
+      component: () => import('../pages/JeweleryPage.vue'),
     },
     {
       path: '/mensclothing',
       name: 'mensclothing',
-      component: MensClothingPage,
+      component: () => import('../pages/MensClothingPage.vue'),
     },
     {
       path: '/womenclothing',
       name: 'womenclothing',
-      component: WomensClothingPage,
+      component: () => import('../pages/WomensClothingPage.vue'),
     },
   ],
-})
+});
 
-export default router
+export default router;
